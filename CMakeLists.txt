@@ -26,7 +26,7 @@ add_executable(a2_bridge src/a2_bridge.cpp)
 ament_target_dependencies(a2_bridge ${DEPENDENCY_LIST})
 
 install(TARGETS
-  a2_bridge_node
+  a2_bridge
   DESTINATION lib/${PROJECT_NAME}
 )
 
