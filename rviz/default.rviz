@@ -42,6 +42,16 @@ Visualization Manager:
       Color Transformer: AxisColor
       Axis: Z
       Autoscale Value Range: true
+    - Class: rviz_default_plugins/Image
+      Enabled: true
+      Name: FrontCamera
+      Topic:
+        Value: /camera/image_raw
+        Depth: 5
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+      # This allows the image to pop out in a separate floating window
+      View Type: TopDown
   Global Options:
     Fixed Frame: base_link
     Publish TRACE: true
@@ -55,3 +65,4 @@ Visualization Manager:
       Pitch: 0.33
       Yaw: 0.78
       Target Frame: base_link
+   

@@ -6,6 +6,8 @@
 #include "sensor_msgs/msg/imu.hpp"
 #include "rosgraph_msgs/msg/clock.hpp"
 #include "unitree_go/msg/low_state.hpp"
+#include "sensor_msgs/msg/image.hpp"
+#include "sensor_msgs/msg/point_cloud2.hpp"
 
 class A2Bridge : public rclcpp::Node {
 public:
@@ -14,11 +16,16 @@ public:
   {
     joint_states_pub_ = this->create_publisher<sensor_msgs::msg::JointState>("/joint_states", 10);
     imu_pub_          = this->create_publisher<sensor_msgs::msg::Imu>("/imu/data", 10);
+    image_pub_       = this->create_publisher<sensor_msgs::msg::Image>("/camera/image_raw", 10);
     clock_pub_        = this->create_publisher<rosgraph_msgs::msg::Clock>("/clock", 10);
 
     lowstate_sub_ = this->create_subscription<unitree_go::msg::LowState>(
       "/lowstate", 10,
       std::bind(&A2Bridge::lowstate_callback, this, std::placeholders::_1));
+    mujoco_camera_sub_ = this->create_subscription<sensor_msgs::msg::PointCloud2>(
+      "/mujoco/front_camera_pointcloud", 10,
+      std::bind(&A2Bridge::camera_callback, this, std::placeholders::_1));
+
 
     joint_names_ = {
       "FR_hip_joint", "FR_thigh_joint", "FR_calf_joint",
@@ -74,9 +81,27 @@ private:
     imu_pub_->publish(imu_msg);
   }
 
+  void camera_callback(const sensor_msgs::msg::PointCloud2::SharedPtr msg)
+  {
+    auto image_msg = sensor_msgs::msg::Image();
+    image_msg.header.stamp    = msg->header.stamp;
+    image_msg.header.frame_id = "camera_link";
+
+    image_msg.height = msg->height;
+    image_msg.width = msg->width;
+    image_msg.encoding = "rgb8";
+    image_msg.is_bigendian = false;
+    image_msg.step = msg->row_step;
+    image_msg.data = msg->data;
+
+    image_pub_->publish(image_msg);
+  }
+
   rclcpp::Subscription<unitree_go::msg::LowState>::SharedPtr lowstate_sub_;
+  rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr mujoco_camera_sub_;
   rclcpp::Publisher<sensor_msgs::msg::JointState>::SharedPtr  joint_states_pub_;
   rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr         imu_pub_;
+  rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr         image_pub_;
   rclcpp::Publisher<rosgraph_msgs::msg::Clock>::SharedPtr     clock_pub_;
   std::vector<std::string> joint_names_;
 };
