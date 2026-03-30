@@ -8,6 +8,7 @@ set (
   unitree_api
   rclcpp
   sensor_msgs
+  rosgraph_msgs
 )
 
 
@@ -31,7 +32,7 @@ install(TARGETS
 )
 
 add_executable(sim_clock_node src/sim_clock.cpp)
-ament_target_dependencies(sim_clock_node rclcpp rosgraph_msgs)
+ament_target_dependencies(sim_clock_node rclcpp rosgraph_msgs unitree_go)
 
 install(TARGETS sim_clock_node
   DESTINATION lib/${PROJECT_NAME}
