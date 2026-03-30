@@ -8,6 +8,7 @@ Panels:
         - /Status1
         - /RobotModel1
         - /TF1
+        - /Lidar1
       Splitter Ratio: 0.5
     Tree Height: 550
 Visualization Manager:
@@ -31,15 +32,21 @@ Visualization Manager:
       Name: TF
       Show Arrows: true
       Show Names: true
+    - Class: rviz_default_plugins/PointCloud2
+      Enabled: true
+      Name: Lidar
+      Topic:
+        Value: /mujoco/lidar
+      Style: Points
+      Size (Pixels): 2
+      Color Transformer: AxisColor
+      Axis: Z
+      Autoscale Value Range: true
   Global Options:
     Fixed Frame: base_link
     Publish TRACE: true
   Tools:
     - Class: rviz_default_plugins/MoveCamera
-  Transformation:
-    Current:
-      Class: rviz_default_plugins/TF
-  Value: true
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
