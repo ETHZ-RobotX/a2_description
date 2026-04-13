@@ -12,7 +12,7 @@
 
   <link
     name="base_link">
-    <inertial>
+<!-- <inertial>
       <origin
         xyz="6.982591E-03 -0.712858E-03 12.889523E-03"
         rpy="0 0 0" />
@@ -25,7 +25,7 @@
         iyy="407724601.564754E-09"
         iyz="-361858.857563E-09"
         izz="472247985.516800E-09" />
-    </inertial>
+    </inertial>   -->
     <visual>
       <origin
         xyz="0 0 0"
