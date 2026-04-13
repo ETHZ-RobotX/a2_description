@@ -34,9 +34,19 @@ Visualization Manager:
       Show Names: true
     - Class: rviz_default_plugins/PointCloud2
       Enabled: true
-      Name: Lidar
+      Name: Front Lidar
       Topic:
-        Value: /mujoco/lidar
+        Value: /mujoco/front_lidar
+      Style: Points
+      Size (Pixels): 2
+      Color Transformer: AxisColor
+      Axis: Z
+      Autoscale Value Range: true
+    - Class: rviz_default_plugins/PointCloud2
+      Enabled: true
+      Name: Rear Lidar
+      Topic:
+        Value: /mujoco/rear_lidar
       Style: Points
       Size (Pixels): 2
       Color Transformer: AxisColor
