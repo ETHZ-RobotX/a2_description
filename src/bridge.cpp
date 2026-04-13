@@ -19,7 +19,7 @@ public:
 
     // Lowstate subscriber
     lowstate_sub_ = this->create_subscription<unitree_go::msg::LowState>(
-      "/lowstate", 10, std::bind(&A2Bridge::lowstate_callback, this, std::placeholders::_1));
+      "/lowstate", rclcpp::SensorDataQoS(), std::bind(&A2Bridge::lowstate_callback, this, std::placeholders::_1));
 
     // Joint names - from the URDF file
     joint_names_ = {

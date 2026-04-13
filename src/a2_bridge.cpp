@@ -5,7 +5,7 @@
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/joint_state.hpp"
 #include "sensor_msgs/msg/imu.hpp"
-#include "unitree_go/msg/low_state.hpp"
+#include "unitree_hg/msg/low_state.hpp"
 
 
 class A2Bridge : public rclcpp::Node {
@@ -18,8 +18,8 @@ public:
     imu_pub_ = this->create_publisher<sensor_msgs::msg::Imu>("/imu/data", 10);
 
     // Lowstate subscriber
-    lowstate_sub_ = this->create_subscription<unitree_go::msg::LowState>(
-      "/lowstate", 10, std::bind(&A2Bridge::lowstate_callback, this, std::placeholders::_1));
+    lowstate_sub_ = this->create_subscription<unitree_hg::msg::LowState>(
+      "/lowstate", rclcpp::SensorDataQoS(), std::bind(&A2Bridge::lowstate_callback, this, std::placeholders::_1));
 
     // Joint names - from the URDF file
     joint_names_ = {
@@ -31,7 +31,7 @@ public:
   }
 
 private:
-  void lowstate_callback(const unitree_go::msg::LowState::SharedPtr msg) {
+  void lowstate_callback(const unitree_hg::msg::LowState::SharedPtr msg) {
     auto now = this->get_clock()->now();
 
     auto joint_states_msg = sensor_msgs::msg::JointState();
@@ -67,7 +67,7 @@ private:
     imu_pub_->publish(imu_msg);
   }
 
-  rclcpp::Subscription<unitree_go::msg::LowState>::SharedPtr lowstate_sub_;
+  rclcpp::Subscription<unitree_hg::msg::LowState>::SharedPtr lowstate_sub_;
   rclcpp::Publisher<sensor_msgs::msg::JointState>::SharedPtr joint_states_pub_;
   rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr imu_pub_;
   std::vector<std::string> joint_names_;
