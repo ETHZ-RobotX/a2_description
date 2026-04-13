@@ -30,7 +30,7 @@ def generate_launch_description():
     
     use_sim_time_arg = DeclareLaunchArgument(
         'use_sim_time',
-        default_value='true',
+        default_value='false',
         description='Use simulation (MuJoCo) clock if true'
     )
 
@@ -38,9 +38,11 @@ def generate_launch_description():
     robot_state_publisher_node = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
+        name='robot_state_publisher',
         parameters=[{
             'robot_description': ParameterValue(Command(['cat ', LaunchConfiguration('urdf_model')]), value_type=str),
-            'use_sim_time': LaunchConfiguration('use_sim_time')
+            'use_sim_time': LaunchConfiguration('use_sim_time'),
+            'publish_robot_description': True,
         }]
     )
 
@@ -54,7 +56,7 @@ def generate_launch_description():
     # The C++ Bridge Node (LowState -> JointState/IMU)
     a2_bridge_node = Node(
         package='a2_description',
-        executable='a2_bridge_node',
+        executable='a2_bridge',
         output='screen',
         parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}]
     )
