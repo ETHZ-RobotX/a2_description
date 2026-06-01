@@ -1100,4 +1100,18 @@
     <child link="rear_lidar_link"/>
     <origin xyz="-0.27997 0.0 0.087337" rpy="1.5708 0.0 -1.5708"/>
   </joint>
+
+  <link name="camera_link">
+    <inertial>
+      <mass value="0.001"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+  </link>
+
+  <joint name="front_camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+    <origin xyz="0.3421785 0.0336742 0.0513862" rpy="1.5708 0.0 1.5708"/>
+  </joint>
 </robot>
