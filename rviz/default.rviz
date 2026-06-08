@@ -346,9 +346,16 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
+      # This allows the image to pop out in a separate floating window
+      View Type: TopDown
+    - Class: rviz_default_plugins/MarkerArray
+      Enabled: true
+      Name: ObjectMarkers
+      Topic:
         Value: /object_markers
-      Value: true
-  Enabled: true
+        Depth: 5
+        History Policy: Keep Last
+        Reliability Policy: Reliable
   Global Options:
     Background Color: 48; 48; 48
     Fixed Frame: base_link
