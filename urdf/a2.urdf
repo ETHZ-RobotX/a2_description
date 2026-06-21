@@ -31,7 +31,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://a2_description/meshes/base_link.STL" />
+        <mesh filename="package://a2_description/meshes/base_link.stl" />
       </geometry>
       <material
         name="">
@@ -98,7 +98,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://a2_description/meshes/left_front_Link1.STL" />
+        <mesh filename="package://a2_description/meshes/left_front_Link1.stl" />
       </geometry>
       <material
         name="">
@@ -147,7 +147,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://a2_description/meshes/left_front_Link2.STL" />
+          filename="package://a2_description/meshes/left_front_Link2.stl" />
       </geometry>
       <material
         name="">
@@ -217,7 +217,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://a2_description/meshes/left_front_Link3.STL" />
+          filename="package://a2_description/meshes/left_front_Link3.stl" />
       </geometry>
       <material
         name="">
@@ -292,7 +292,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://a2_description/meshes/left_front_Link4.STL" />
+          filename="package://a2_description/meshes/left_front_Link4.stl" />
       </geometry>
       <material
         name="">
@@ -346,7 +346,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://a2_description/meshes/left_hind_Link1.STL" />
+          filename="package://a2_description/meshes/left_hind_Link1.stl" />
       </geometry>
       <material
         name="">
@@ -396,7 +396,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://a2_description/meshes/left_hind_Link2.STL" />
+          filename="package://a2_description/meshes/left_hind_Link2.stl" />
       </geometry>
       <material
         name="">
@@ -467,7 +467,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://a2_description/meshes/left_hind_Link3.STL" />
+          filename="package://a2_description/meshes/left_hind_Link3.stl" />
       </geometry>
       <material
         name="">
@@ -540,7 +540,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://a2_description/meshes/left_hind_Link4.STL" />
+          filename="package://a2_description/meshes/left_hind_Link4.stl" />
       </geometry>
       <material
         name="">
@@ -592,7 +592,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://a2_description/meshes/right_front_Link1.STL" />
+          filename="package://a2_description/meshes/right_front_Link1.stl" />
       </geometry>
       <material
         name="">
@@ -642,7 +642,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://a2_description/meshes/right_front_Link2.STL" />
+          filename="package://a2_description/meshes/right_front_Link2.stl" />
       </geometry>
       <material
         name="">
@@ -713,7 +713,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://a2_description/meshes/right_front_Link3.STL" />
+          filename="package://a2_description/meshes/right_front_Link3.stl" />
       </geometry>
       <material
         name="">
@@ -786,7 +786,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://a2_description/meshes/right_front_Link4.STL" />
+          filename="package://a2_description/meshes/right_front_Link4.stl" />
       </geometry>
       <material
         name="">
@@ -838,7 +838,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://a2_description/meshes/right_hind_Link1.STL" />
+          filename="package://a2_description/meshes/right_hind_Link1.stl" />
       </geometry>
       <material
         name="">
@@ -888,7 +888,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://a2_description/meshes/right_hind_Link2.STL" />
+          filename="package://a2_description/meshes/right_hind_Link2.stl" />
       </geometry>
       <material
         name="">
@@ -957,7 +957,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://a2_description/meshes/right_hind_Link3.STL" />
+          filename="package://a2_description/meshes/right_hind_Link3.stl" />
       </geometry>
       <material
         name="">
@@ -1030,7 +1030,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://a2_description/meshes/right_hind_Link4.STL" />
+          filename="package://a2_description/meshes/right_hind_Link4.stl" />
       </geometry>
       <material
         name="">
